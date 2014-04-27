@@ -6,12 +6,22 @@ import com.osoobe.rpgdemo.Game;
 import com.osoobe.rpgdemo.gfx.SpriteSheet;
 
 public class Player {
-	int x, y;
+	int x, y, h, w;
 	SpriteSheet ss_image;
 	
-	public Player(int x, int y, SpriteSheet image){
+	public Player(SpriteSheet image, int x, int y, int w, int h){
 		this.x = x;
 		this.y = y;
+		this.w = w;
+		this.h = h;
+		ss_image = image;
+	}
+	
+	public Player(SpriteSheet image, int x, int y){
+		this.x = x;
+		this.y = y;
+		this.w = 20;
+		this.h = 20;
 		ss_image = image;
 	}
 	
@@ -24,7 +34,7 @@ public class Player {
 	 * @param graphics
 	 */
 	public void render(Graphics graphics){
-		graphics.drawImage(ss_image.cropped(0, 0, 16, 16), x, y, 16*Game.SCALE, 16*Game.SCALE, null);
+		graphics.drawImage(ss_image.cropped(0, 4, w, h), x, y, w*Game.SCALE, h*Game.SCALE, null);
 	}
 	
 }

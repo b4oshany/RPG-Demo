@@ -48,7 +48,7 @@ public class Game extends Canvas implements Runnable{
 		
 		SpriteSheet ss_image = new SpriteSheet(spriteImage);
 		
-		player = new Player(0,0,ss_image);
+		player = new Player(ss_image,0,0,25,30);
 	}
 	
 	public void run() {
